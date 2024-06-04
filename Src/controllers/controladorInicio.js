@@ -155,12 +155,21 @@ controller.perfildocentes = (req, res) => {
     const {ID_Docente} = req.params;
     
     req.getConnection((err, conn) => {
+        
+        conn.query('SELECT md.ID_Materia, m.Nombre_Materias, md.ID_Docente, d.Nombre_Docentes, d.Apellido_Paterno_Docentes, d.Apellido_Materno_Docentes FROM Materia_Docente md JOIN materias m ON md.ID_Materia = m.ID_Materia JOIN docentes d ON md.ID_Docente = d.ID_Docente where md.ID_Docente = ?',
+         [ID_Docente] , (err, rows) => {
+            
+                console.log('Los datos de la primera consulta' + rows[0]);
 
-        conn.query('SELECT md.ID_Materia, m.Nombre_Materias, md.ID_Docente, d.Nombre_Docentes, d.Apellido_Paterno_Docentes, d.Apellido_Materno_Docentes FROM Materia_Docente md JOIN materias m ON md.ID_Materia = m.ID_Materia JOIN docentes d ON md.ID_Docente = d.ID_Docente where md.ID_Docente = ?', [ID_Docente] , (err, rows) => {
-            res.render('perfildocentes',{
-            data: rows
+                conn.query('SELECT *FROM comentarios',(err,rowss) => {
+                    res.render('perfildocentes',{
+                        data: rows,
+                        comentarios: rowss
+                    });
+                    console.log('Los datos de la segunda consulta ' + rowss[0].Comentario);
+                })
         });
-        });
+        
     })
     
 };

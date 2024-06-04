@@ -19,10 +19,22 @@
                 <%= data[0].Nombre_Docentes %> <%= data[0].Apellido_Paterno_Docentes%> <%= data[0].Apellido_Materno_Docentes %>
             <% } %>
         </h4>
-        <h4>Calificación general: Calificación</h4>
+
+        <% var x=0; if (comentarios) { %>
+            <% for(var i = 0; i < comentarios.length; i++) { %>
+
+                <% x = x + comentarios[i].Calificacion %>
+
+            <% } x = x/comentarios.length %>
+        <% } %>
+
+
+        <h4>Calificación general: <%= x %></h4>
     </main>
     <div class="derecha-cal">
-        <h4>La calificacion es:</h4>
+
+        <h4>La calificacion es: <%= x %> </h4>
+
     </div>
     <h4>Materias que imparte:</h4>
     <div>
@@ -50,8 +62,17 @@
             <thead> 
                 <th>Comentarios</th>
             </thead>
+
             <tbody>
-               
+                <% if (comentarios) { %>
+                    <% for(var i = 0; i < comentarios.length; i++) { %>
+
+                        <tr>
+                            <td><%= comentarios[i].Comentario %></td>
+                        </tr>
+
+                    <% } %>
+                <% } %>
             </tbody>
         </table>
     </div>
