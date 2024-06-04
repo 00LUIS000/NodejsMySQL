@@ -70,10 +70,8 @@ controller.comentarios = (req, res) => {
             if(err){
                 res.json(err);
             }
-            res.render('menu',{
-                data: values
-            });
-
+            res.redirect('perfildocentes/'+data.ID_Docente);
+            
         });
 
     })
@@ -159,14 +157,15 @@ controller.perfildocentes = (req, res) => {
         conn.query('SELECT md.ID_Materia, m.Nombre_Materias, md.ID_Docente, d.Nombre_Docentes, d.Apellido_Paterno_Docentes, d.Apellido_Materno_Docentes FROM Materia_Docente md JOIN materias m ON md.ID_Materia = m.ID_Materia JOIN docentes d ON md.ID_Docente = d.ID_Docente where md.ID_Docente = ?',
          [ID_Docente] , (err, rows) => {
             
-                console.log('Los datos de la primera consulta' + rows[0]);
+                //console.log('Los datos de la primera consulta' + rows[0]);
 
-                conn.query('SELECT *FROM comentarios',(err,rowss) => {
+                conn.query('select *from comentarios where ID_Docente = ?',
+                 [ID_Docente],(errr,rowss) => {
                     res.render('perfildocentes',{
                         data: rows,
                         comentarios: rowss
                     });
-                    console.log('Los datos de la segunda consulta ' + rowss[0].Comentario);
+                   // console.log('Los datos de la segunda consulta ' + rowss[0].Calificacion);
                 })
         });
         

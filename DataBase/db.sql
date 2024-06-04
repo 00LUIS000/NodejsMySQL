@@ -443,7 +443,7 @@ JOIN
 );
 
 INSERT INTO comentarios (ID_Usuario, ID_Docente, ID_Materia, Nombre_Materia, Comentario, Calificacion) 
-VALUES (1, 101, 1, 'Matemáticas', 'Excelente explicación sobre ecuaciones lineales.', 9);
+VALUES (1, 12, 1, 'Matemáticas', 'Excelente explicación sobre ecuaciones profesor numero 9.', 9);
 
 
 SELECT Comentarios.ID_Comentario, 
@@ -456,4 +456,5 @@ SELECT Comentarios.ID_Comentario,
        materias.Nombre_Materias AS Nombre_Materia
 FROM Comentarios
 INNER JOIN materias ON Comentarios.ID_Materia = materias.ID_Materia
-INNER JOIN docentes ON Comentarios.ID_Docente = docentes.ID_Docente;
+INNER JOIN docentes ON Comentarios.ID_Docente = docentes.ID_Docente
+where Comentarios.ID_Docente = ;
