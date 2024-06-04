@@ -1,5 +1,16 @@
 <%- include('partials/_header') %>
     <main>
+        
+        <% if(typeof(data) === 'undefined'){ %>
+           
+            <% }else{ %>
+                <!--<pre><%= data %></pre>-->
+                <% if(data == false){ %>
+                        <script>alert('ERROR DATOS INCORRECTOS')</script>
+                    <% }%>
+           
+        <% } %>
+        
         <h2>Iniciar Sesión</h2>
         <form action="/ingresar" method="post">
             

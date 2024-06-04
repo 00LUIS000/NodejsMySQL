@@ -241,3 +241,188 @@ insert into materias(Nombre_Materias) values
 ('TRANSFERENCIA Y PROC.DE LA INFORMACION II'),
 ('ALGORITMOS DE COMPUTO II'),
 ('INTERFASES INTELIGENTES II');
+
+CREATE TABLE Materia_Docente (
+    ID_Materia INT,
+    ID_Docente INT,
+    PRIMARY KEY (ID_Materia, ID_Docente),
+    FOREIGN KEY (ID_Materia) REFERENCES materias(ID_Materia),
+    FOREIGN KEY (ID_Docente) REFERENCES docentes(ID_Docente)
+);
+
+
+#-----Primero y Segundo
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(1,1);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(1,2);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(1,3);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(1,4);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(1,5);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(1,6);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(1,7);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(1,8);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(2,9);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(2,10);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(2,11);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(2,12);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(3,13);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(3,14);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(3,15);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(3,16);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(3,17);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(3,18);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(4,19);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(4,20);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(4,21);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(4,22);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(4,23);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(5,7);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(5,9);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(5,3);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(5,24);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(5,25);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(6,26);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(6,27);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(6,28);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(6,29);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(6,30);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(7,1);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(7,7);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(7,3);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(7,31);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(7,32);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(7,6);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(8,11);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(8,10);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(8,9);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(8,8);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(8,5);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(8,34);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(9,35);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(9,36);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(9,37);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(9,38);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(9,18);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(9,39);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(10,19);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(10,20);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(10,23);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(10,40);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(10,22);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(11,41);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(11,42);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(11,43);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(11,44);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(11,45);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(12,46);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(12,43);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(12,7);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(12,8);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(12,47);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(12,42);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(12,48);
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(12,25);
+
+#----- SÃ©ptimo y Octavo
+INSERT INTO Materia_Docente(ID_Materia,ID_Docente) VALUES(37,87);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(37,88);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(37,89);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(38,70);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(38,90);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(38,86);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(39,91);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(39,92);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(39,93);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(40,82);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(40,94);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(46,100);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(46,76);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(42,75);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(42,95);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(43,91);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(43,104);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(44,97);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(44,98);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(45,99);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(45,53);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(47,90);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(47,7);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(47,85);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(47,101);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(48,82);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(48,20);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(48,94);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(49,102);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(49,103);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(50,75);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(50,69);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(53,15);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(55,51);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(55,92);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(55,93);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(56,15);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(56,68);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(56,95);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(58,100);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(58,95);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(59,71);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(59,96);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(60,97);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(60,98);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(61,99);
+INSERT INTO Materia_Docente(ID_Materia, ID_Docente) VALUES(61,53);
+
+#----Quinto y Sexto
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (25, 70);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (25, 71);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (25, 48);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (26, 48);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (26, 72);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (26, 43);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (26, 5);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (27, 37);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (27, 73);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (27, 74);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (28, 15);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (28, 75);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (28, 76);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (28, 73);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (29, 77);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (29, 55);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (29, 78);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (30, 60);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (30, 20);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (30, 40);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (31, 36);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (31, 13);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (31, 74);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (31, 39);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (32, 77);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (32, 55);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (32, 79);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (33, 80);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (33, 81);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (34, 82);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (34, 21);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (34, 83);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (35, 84);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (35, 48);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (35, 53);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (35, 85);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (36, 72);
+INSERT INTO Materia_Docente (ID_Materia, ID_Docente) VALUES (36, 86);
+
+SELECT 
+    md.ID_Materia, 
+    m.Nombre_Materias, 
+    md.ID_Docente, 
+    d.Nombre_Docentes, 
+    d.Apellido_Paterno_Docentes, 
+    d.Apellido_Materno_Docentes
+FROM 
+    Materia_Docente md
+JOIN 
+    materias m ON md.ID_Materia = m.ID_Materia
+JOIN 
+    docentes d ON md.ID_Docente = d.ID_Docente;
+
+ select * from docentes where Nombre_Docentes = 'luis' or Apellido_Paterno_Docentes = 'luis' or Apellido_Materno_Docentes = 'luis';

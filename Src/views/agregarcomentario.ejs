@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProfESIME.com - Perfil Docente</title>
-    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="/css/estilos.css">
 </head>
 <body>
     <nav>
@@ -13,18 +13,23 @@
         </div>
     </nav>
     <main>
-        <h2>Agregar comentario</h2>
+        <h2>Agregar comentario a el/la docente <%= data[0].Nombre_Docentes %> <%= data[0].Apellido_Paterno_Docentes%> <%= data[0].Apellido_Materno_Docentes %></h2>
     </main>
+
+<form action="/addcomentarios" method="post">
     <div>
-        <label>Materia que imparte: </label>
-        <select id="materia" name="materia" class="select-field" required>
-        <option value="">Selecciona una materia</option>
+        <label>Seleccióne la materia: </label>
+        <select id="materia" name="materia" class="select-field">
+            <% for(var i = 0; i < data.length; i++) { %>
+                <option value="<%= data[i].Nombre_Materias %>"><%= data[i].Nombre_Materias %></option>
+            <% } %>
         </select>
+       
     </div>
+    
     <div>
-        <label>Calificación: </label>
-        <select id="calf" name="calificacion" class="select-field" required>
-        <option value="">Selecciona una calificación</option>
+        <label>Selecióne una calificación: </label>
+        <select id="calf" name="calificacion" class="select-field">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -37,12 +42,17 @@
         <option value="10">10</option>
         </select>
     </div>
+     
     <div class="coment-tag">
-        <textarea name="comen" id="comen"></textarea>
+        <textarea name="comentario" id="comen" placeholder="Agruegue algun comentario"></textarea>
     </div>
+
     <div class="bottom-buttons">
-        <button type="button" onclick="location.href='/perfildocentes'">Regresar</button>
-        <button type="button" onclick="location.href='perfildocentes.html'">Guardar</button>
+        <button type="button" onclick="location.href='/perfildocentes/<%= data[0].ID_Docente %>'">Regresar</button>
+        <button type="submit">Guardar</button>
     </div>
+
+</form>
+
 </body>
 </html>

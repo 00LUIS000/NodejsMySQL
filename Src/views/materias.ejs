@@ -16,11 +16,15 @@
         <div class="menu-button-container">
             <button type="button" onclick="location.href='/menu'">Menú</button>
         </div>
-        <div class="search-container">
-            <p>Búsqueda:</p>
-            <input type="text" id="search" name="search" placeholder="Escribe tu búsqueda...">
-            <button type="submit">Buscar</button>
-        </div>
+        <form action="/buscarmateria" method="post">
+            <div class="search-container">
+                
+                <p>Búsqueda: </p>
+                <input type="text" id="buscar" name="buscar" placeholder="Escribe tu búsqueda...">
+                <button type="submit" >Buscar</button>
+            
+            </div>
+        </form>
         <div class="table-container">
             <table>
                 <thead>
@@ -36,7 +40,7 @@
                                 <td><%= data[i].Nombre_Materias %></td>
 
                                 <!-- <td><a href="/delete/<%= data[i].id %>" class="button-container">Ir</a></td> -->
-                                <td><a href="/detallematerias" class="button-container">Ir</a></td>    
+                                <td><a href="/detallematerias/<%= data[i].ID_Materia %>" class="button-container">Ir</a></td>    
 
                             </tr>
 

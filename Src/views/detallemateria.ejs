@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProfESIME.com - Menú</title>
-    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="/css/estilos.css">
 </head>
 <body>
     <nav>
@@ -18,20 +18,34 @@
             <button type="button" class="right-button" onclick="location.href='/materias'">Regresar</button>
         </div>
         <div class="search-container">
-            <h2>Los maestros que imparten la materia son:</h2>
+            <h2>Los maestros que imparten la materia de <%= data[0].Nombre_Materias%> son:</h2>
         </div>
         <div class="table-container">
             <table>
+
+                <thead>
+                    <th>Nombre</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                </thead>
+
                 <tbody>
-                    <tr>
-                        <td><button type="button" onclick="location.href='perfildocentes.html'">Ir</button> Item 1</td>
-                    </tr>
-                    <tr>
-                        <td><button type="button" onclick="location.href='ir2.html'">Ir</button> Item 2</td>
-                    </tr>
-                    <tr>
-                        <td><button type="button" onclick="location.href='ir3.html'">Ir</button> Item 3</td>
-                    </tr>
+
+                    <% if (data) { %>
+                        <% for(var i = 0; i < data.length; i++){ %>
+
+                            <tr>
+                                <td><%= data[i].Nombre_Docentes %></td>
+                                <td><%= data[i].Apellido_Paterno_Docentes %></td>
+                                <td><%= data[i].Apellido_Materno_Docentes %></td>
+
+                                <td><a href="/perfildocentes/<%= data[i].ID_Docente %>" class="button-container">Ir</a></td>    
+
+                            </tr>
+
+                        <% } %>
+                    <% } %>
+                   
                 </tbody>
             </table>
         </div>

@@ -16,11 +16,15 @@
         <div class="menu-button-container">
             <button type="button" onclick="location.href='/menu'">Menú</button>
         </div>
+    <form action="/buscardocente" method="post">
         <div class="search-container">
-            <p>Búsqueda:</p>
-            <input type="text" id="search" name="search" placeholder="Escribe tu búsqueda...">
-            <button type="submit">Buscar</button>
+            
+            <p>Búsqueda: </p>
+            <input type="text" id="buscar" name="buscar" placeholder="Escribe tu búsqueda...">
+            <button type="submit" >Buscar</button>
+        
         </div>
+    </form>
         <div class="table-container">
             <table>
 
@@ -40,8 +44,7 @@
                                 <td><%= data[i].Apellido_Paterno_Docentes %></td>
                                 <td><%= data[i].Apellido_Materno_Docentes %></td>
 
-                                <!-- <td><a href="/delete/<%= data[i].id %>" class="button-container">Ir</a></td> -->
-                                <td><a href="/perfildocentes" class="button-container">Ir</a></td>    
+                                <td><a href="/perfildocentes/<%= data[i].ID_Docente %>" class="button-container">Ir</a></td>    
 
                             </tr>
 

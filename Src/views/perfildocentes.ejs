@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProfESIME.com - Perfil Docente</title>
-    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="/css/estilos.css">
 </head>
 <body>
     <nav>
@@ -13,8 +13,12 @@
         </div>
     </nav>
     <main>
-        <h2>Perfil docente</h2>
-        <h4>Nombre profesor</h4>
+        <h2>Perfil del docente </h2>
+        <h4>
+            <% if(Object.keys(data).length !== 0){ %>
+                <%= data[0].Nombre_Docentes %> <%= data[0].Apellido_Paterno_Docentes%> <%= data[0].Apellido_Materno_Docentes %>
+            <% } %>
+        </h4>
         <h4>Calificación general: Calificación</h4>
     </main>
     <div class="derecha-cal">
@@ -23,17 +27,22 @@
     <h4>Materias que imparte:</h4>
     <div>
         <table>
+            <thead> 
+                <th>Materia</th>
+            </thead>
+
             <tbody>
-                <tr>
-                    <td> Elemento 1</td>
-                </tr>
-                <tr>
-                    <td> Elemento 2 </td>
-                </tr>
-                <tr>
-                    <td> Elemento 3... </td>
-                </tr>
+                <% if (data) { %>
+                    <% for(var i = 0; i < data.length; i++) { %>
+
+                        <tr>
+                            <td><%= data[i].Nombre_Materias %></td>
+                        </tr>
+
+                    <% } %>
+                <% } %>
             </tbody>
+         
         </table>
     </div>
     <div class="derecha-com">
@@ -52,7 +61,9 @@
         </table>
     </div>
     <div>
-        <button type="button" onclick="location.href='/agregarcomentario'">Agregar comentario</button>
+        <% if(Object.keys(data).length !== 0){ %>
+            <button type="button" onclick="location.href='/agregarcomentario/<%= data[0].ID_Docente %>'">Agregar comentario</button>
+        <% } %>
     </div>
     <div class="bottom-buttons">
         <button type="button" onclick="location.href='/docentes'">Regresar</button>
