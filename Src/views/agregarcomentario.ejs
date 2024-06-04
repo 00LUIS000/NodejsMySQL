@@ -46,6 +46,8 @@
     <div class="coment-tag">
         <textarea name="comentario" id="comen" placeholder="Agruegue algun comentario"></textarea>
     </div>
+    
+    <input type="hidden" name="ID_Docente" value="<%= data[0].ID_Docente %>">
 
     <div class="bottom-buttons">
         <button type="button" onclick="location.href='/perfildocentes/<%= data[0].ID_Docente %>'">Regresar</button>

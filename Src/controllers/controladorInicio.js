@@ -61,17 +61,16 @@ controller.agregarcomentario = (req, res) => {
 
 controller.comentarios = (req, res) => {
     const data = req.body;
-    console.log(data); 
     
     req.getConnection((err, conn) => {
 
-        conn.query('INSERT INTO Comentarios (ID_Usuario, ID_Docente, ID_Materia, Nombre_Materia, Comentario, Calificacion) VALUES (1, 101, 1, ?, ?, ?);',
-        [data.materia,data.comentario,data.calificacion], (err, values) => {
+        conn.query('INSERT INTO Comentarios (ID_Usuario, ID_Docente, ID_Materia, Nombre_Materia, Comentario, Calificacion) VALUES (null, ?, null, ?, ?, ?);',
+        [data.ID_Docente,data.materia,data.comentario,data.calificacion], (err, values) => {
             
             if(err){
                 res.json(err);
             }
-            res.render('docentes',{
+            res.render('menu',{
                 data: values
             });
 
@@ -163,6 +162,7 @@ controller.perfildocentes = (req, res) => {
         });
         });
     })
+    
 };
 
 

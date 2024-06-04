@@ -426,3 +426,34 @@ JOIN
     docentes d ON md.ID_Docente = d.ID_Docente;
 
  select * from docentes where Nombre_Docentes = 'luis' or Apellido_Paterno_Docentes = 'luis' or Apellido_Materno_Docentes = 'luis';
+
+
+ CREATE TABLE comentarios (
+    ID_Comentario INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Usuario INT,
+    ID_Docente INT,
+    ID_Materia INT,
+    Nombre_Materia VARCHAR(50),
+    Comentario TEXT NOT NULL,
+    Fecha_Comentario TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    Calificacion INT CHECK (Calificacion >= 1 AND Calificacion <= 10), -- Se agrega la calificación con restricción de rango
+    FOREIGN KEY (ID_Usuario) REFERENCES usuarios(ID_Usuario),
+    FOREIGN KEY (ID_Docente) REFERENCES docentes(ID_Docente),
+    FOREIGN KEY (ID_Materia) REFERENCES materias(ID_Materia)
+);
+
+INSERT INTO comentarios (ID_Usuario, ID_Docente, ID_Materia, Nombre_Materia, Comentario, Calificacion) 
+VALUES (1, 101, 1, 'Matemáticas', 'Excelente explicación sobre ecuaciones lineales.', 9);
+
+
+SELECT Comentarios.ID_Comentario, 
+       Comentarios.ID_Usuario, 
+       Comentarios.ID_Docente, 
+       docentes.Nombre_Docentes, -- Agregamos el nombre del docente
+       Comentarios.Comentario, 
+       Comentarios.Fecha_Comentario, 
+       materias.ID_Materia, 
+       materias.Nombre_Materias AS Nombre_Materia
+FROM Comentarios
+INNER JOIN materias ON Comentarios.ID_Materia = materias.ID_Materia
+INNER JOIN docentes ON Comentarios.ID_Docente = docentes.ID_Docente;
